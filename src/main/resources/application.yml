@@ -1,0 +1,13 @@
+jwt:
+  secret: test
+  expiration_time: 600000
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:13306/jwt_security
+    username: joonhee
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
