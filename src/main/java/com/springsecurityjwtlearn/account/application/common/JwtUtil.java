@@ -17,7 +17,6 @@ import java.util.Map;
 public class JwtUtil {
 
     private final long accessTokenExpTime;
-    private final String secretKey;
     private final Algorithm algorithm;
 
 
@@ -26,7 +25,6 @@ public class JwtUtil {
         @Value("${jwt.expiration_time}") long accessTokenExpTime
     ) {
         this.accessTokenExpTime = accessTokenExpTime;
-        this.secretKey = secretKey;
         this.algorithm = Algorithm.HMAC256(secretKey);
     }
 
@@ -81,8 +79,9 @@ public class JwtUtil {
             return true;
         } catch (Exception e) {
             log.info("JWT claims string is empty.", e);
+            throw e;
+
         }
-        return false;
     }
 
 

@@ -2,6 +2,7 @@ package com.springsecurityjwtlearn.account.domain.entity;
 
 public enum RoleType {
     USER("사용자"),
+    MANAGER("매니저"),
     ADMIN("관리자");
 
     private final String roleName;
